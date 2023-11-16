@@ -1,0 +1,38 @@
+.main{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.card{
+    display: flex;
+    flex-direction: column;
+    height: 50%;
+    width: 50%;
+    background-color: rgba(132, 132, 132, 0.41);
+    border-radius: 20px;
+    padding: 10px;
+    align-items: center;
+}
+.btn_flex{
+    margin: 20px 0;
+    display: flex;
+    gap: 10px;
+}
+.btn{
+    all: unset;
+    background-color: rgb(130, 130, 255);
+    padding: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+    width: 80px;
+    text-align: center;
+    color: black;
+}
+.btn:hover{
+    background-color: rgb(96, 96, 251);
+}
+a{
+    text-decoration: none;
+}
