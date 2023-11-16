@@ -1,16 +1,18 @@
 import React, { useState } from "react";
 import styles from "../styles/form.module.css";
 
-const CreateDoctor = () => {
+const CreatePatient = () => {
   const [apiData, setApiData] = useState();
   const [showData, setShowData] = useState(false);
   const [data, setData] = useState({
     name: "",
-    specialty: "",
-    yoe: 0,
+    doctorId:0,
+    nurseId:0,
+    disease:"",
+    medication:""
   });
   const handleSubmit = () => {
-    fetch("http://localhost:8080/doctors", {
+    fetch("http://localhost:8080/patients", {
       method: "POST",
       body: JSON.stringify(data),
       headers: {
@@ -32,20 +34,37 @@ const CreateDoctor = () => {
       };
     });
   };
-  const handleSpecChange = (event) => {
+  const handleDocIDChange = (event) => {
     setData((prev) => {
       return {
         ...prev,
-        specialty: event.target.value,
+        doctorId: Number(event.target.value),
+      };
+    });
+  };
+  const handleNurseIDChange = (event) => {
+    setData((prev) => {
+      return {
+        ...prev,
+        nurseId: Number(event.target.value),
       };
     });
     console.log(data);
   };
-  const handleYoeChange = (event) => {
+  const handleDiseaseIDChange = (event) => {
     setData((prev) => {
       return {
         ...prev,
-        yoe: Number(event.target.value),
+        disease: event.target.value,
+      };
+    });
+    console.log(data);
+  };
+  const handleMedIDChange = (event) => {
+    setData((prev) => {
+      return {
+        ...prev,
+        medication: event.target.value,
       };
     });
     console.log(data);
@@ -55,19 +74,23 @@ const CreateDoctor = () => {
       <div className={styles.card}>
         <label>Name</label>
         <input type="text" onChange={handleNameChange} />
-        <label>Specialty</label>
-        <input type="text" onChange={handleSpecChange} />
-        <label>Years of experience</label>
-        <input type="text" onChange={handleYoeChange} />
-      </div>
+        <label>Doctor ID</label>
+        <input type="text" onChange={handleDocIDChange} />
+        <label>Nurse ID</label>
+        <input type="text" onChange={handleNurseIDChange} />
+        <label>Disease</label>
+        <input type="text" onChange={handleDiseaseIDChange} />
+        <label>Medication</label>
+        <input type="text" onChange={handleMedIDChange} />
       <button className={styles.btn} onClick={handleSubmit}>
         Submit
       </button>
       {showData && <div>
-        Doctor #{apiData.id} : {apiData.name} created
+        Patient #{apiData.id} : {apiData.name} created
       </div>}
+      </div>
     </main>
   );
 };
 
-export default CreateDoctor;
+export default CreatePatient;

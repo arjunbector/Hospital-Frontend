@@ -1,16 +1,14 @@
 import React, { useState } from "react";
 import styles from "../styles/form.module.css";
 
-const CreateDoctor = () => {
+const CreateNurse = () => {
   const [apiData, setApiData] = useState();
   const [showData, setShowData] = useState(false);
   const [data, setData] = useState({
-    name: "",
-    specialty: "",
-    yoe: 0,
+    name: ""
   });
   const handleSubmit = () => {
-    fetch("http://localhost:8080/doctors", {
+    fetch("http://localhost:8080/nurses", {
       method: "POST",
       body: JSON.stringify(data),
       headers: {
@@ -32,42 +30,20 @@ const CreateDoctor = () => {
       };
     });
   };
-  const handleSpecChange = (event) => {
-    setData((prev) => {
-      return {
-        ...prev,
-        specialty: event.target.value,
-      };
-    });
-    console.log(data);
-  };
-  const handleYoeChange = (event) => {
-    setData((prev) => {
-      return {
-        ...prev,
-        yoe: Number(event.target.value),
-      };
-    });
-    console.log(data);
-  };
   return (
     <main>
       <div className={styles.card}>
         <label>Name</label>
         <input type="text" onChange={handleNameChange} />
-        <label>Specialty</label>
-        <input type="text" onChange={handleSpecChange} />
-        <label>Years of experience</label>
-        <input type="text" onChange={handleYoeChange} />
-      </div>
       <button className={styles.btn} onClick={handleSubmit}>
         Submit
       </button>
       {showData && <div>
-        Doctor #{apiData.id} : {apiData.name} created
+        Nurse #{apiData.id} : {apiData.name} created
       </div>}
+      </div>
     </main>
   );
 };
 
-export default CreateDoctor;
+export default CreateNurse;

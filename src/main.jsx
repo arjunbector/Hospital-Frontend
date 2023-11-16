@@ -7,36 +7,46 @@ import Doctor from "../Pages/Doctor.jsx";
 import Patient from "../Pages/Patient.jsx";
 import Nurse from "../Pages/Nurse.jsx";
 import CreateDoctor from "../Pages/CreateDoctor.jsx";
+import CreatePatient from "../Pages/createPatient.jsx";
+import CreateNurse from "../Pages/createNurse.jsx";
 
 const router = createBrowserRouter([
   {
-    path:"/",
-    element:<App/>,
-    errorElement:<ErrorPage/>,
+    path: "/",
+    element: <App />,
+    errorElement: <ErrorPage />,
   },
   {
-    path:"/doctor",
-    element:<Doctor/>,
-    errorElement:<ErrorPage/>,
-    
+    path: "/doctor",
+    element: <Doctor />,
+    errorElement: <ErrorPage />,
   },
   {
-    path:"/patient",
-    element:<Patient/>,
-    errorElement:<ErrorPage/>
+    path: "/patient",
+    element: <Patient />,
+    errorElement: <ErrorPage />,
   },
   {
-    path:"/nurse",
-    element: <Nurse/>,
-    errorElement:<ErrorPage/>
+    path: "/nurse",
+    element: <Nurse />,
+    errorElement: <ErrorPage />,
   },
   {
-    path:"createDoctor",
-    element:<CreateDoctor/>,
-    errorElement:<ErrorPage/>
-  }
+    path: "createDoctor",
+    element: <CreateDoctor />,
+    errorElement: <ErrorPage />,
+  },
+  {
+    path: "createPatient",
+    element: <CreatePatient />,
+    errorElement: <ErrorPage />,
+  },
+  {
+    path: "createNurse",
+    element: <CreateNurse/>,
+    errorElement: <ErrorPage />,
+  },
 ]);
-
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>

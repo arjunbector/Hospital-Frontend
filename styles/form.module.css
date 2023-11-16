@@ -8,3 +8,7 @@ input{
     padding: 10px;
     margin-bottom: 10px;
 }
+.btn{
+    width: fit-content;
+    padding: 10px;
+}
