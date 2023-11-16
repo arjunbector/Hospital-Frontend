@@ -9,6 +9,9 @@ import Nurse from "../Pages/Nurse.jsx";
 import CreateDoctor from "../Pages/CreateDoctor.jsx";
 import CreatePatient from "../Pages/createPatient.jsx";
 import CreateNurse from "../Pages/createNurse.jsx";
+import GetDoctor from "../Pages/getDoctor.jsx";
+import GetPatient from "../Pages/GetPatient.jsx";
+import GetNurse from "../Pages/GetNurse.jsx";
 
 const router = createBrowserRouter([
   {
@@ -44,6 +47,21 @@ const router = createBrowserRouter([
   {
     path: "createNurse",
     element: <CreateNurse/>,
+    errorElement: <ErrorPage />,
+  },
+  {
+    path: "getDoctor",
+    element: <GetDoctor/> ,
+    errorElement: <ErrorPage />,
+  },
+  {
+    path: "getPatient",
+    element: <GetPatient/> ,
+    errorElement: <ErrorPage />,
+  },
+  {
+    path: "getNurse",
+    element: <GetNurse/> ,
     errorElement: <ErrorPage />,
   },
 ]);

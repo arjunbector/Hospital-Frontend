@@ -59,13 +59,13 @@ const CreateDoctor = () => {
         <input type="text" onChange={handleSpecChange} />
         <label>Years of experience</label>
         <input type="text" onChange={handleYoeChange} />
-      </div>
       <button className={styles.btn} onClick={handleSubmit}>
         Submit
       </button>
       {showData && <div>
         Doctor #{apiData.id} : {apiData.name} created
       </div>}
+      </div>
     </main>
   );
 };

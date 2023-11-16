@@ -9,7 +9,7 @@ const Doctor = () => {
         <Link to={"/createDoctor"}>
           <button className={styles.btn}>createDoctor</button>
         </Link>
-        <Link>
+        <Link to={"/getDoctor"}>
           <button className={styles.btn}>getDoctor</button>
         </Link>
       </div>

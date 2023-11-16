@@ -9,6 +9,18 @@ input{
     margin-bottom: 10px;
 }
 .btn{
-    width: fit-content;
+    all: unset;
+    background-color: rgb(130, 130, 255);
     padding: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+    width: 80px;
+    text-align: center;
+    color: black;
+}
+.btn:hover{
+    background-color: rgb(96, 96, 251);
+}
+.data{
+    margin: 10px 0;
 }
