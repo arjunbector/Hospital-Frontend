@@ -7,10 +7,10 @@ const Nurse = () => {
     <main className={styles.main}>
       <div className={styles.btn_flex}>
         <Link to={"/createNurse"}>
-          <button className={styles.btn}>createNurse</button>
+          <button className={styles.btn}>Create Nurse</button>
         </Link>
         <Link to={"/getNurse"}>
-          <button className={styles.btn}>getNurse</button>
+          <button className={styles.btn}>Get Nurse</button>
         </Link>
       </div>
     </main>
